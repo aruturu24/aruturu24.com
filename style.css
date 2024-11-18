@@ -67,10 +67,6 @@ h2 {
   max-width: 50%;
 }
 
-.container .stats {
-  max-width: 100%;
-}
-
 .ascii {
   font-size: 0.1em;
 
@@ -134,7 +130,11 @@ body::after {
     margin: 1em;
   }
 
+  .container div {
+    max-width: 100%;
+  }
+
   .ascii {
-    font-size: 0.3em;
+    font-size: 0.2em;
   }
 }
