@@ -13,6 +13,7 @@
 
 body {
   font-family: "Tiny5", monospace;
+  text-align: justify;
   background-color: #000;
   color: #fff;
   text-shadow: 0 0 0.2em rgb(var(--highlight-color), 1);
@@ -71,7 +72,6 @@ h2 {
 }
 
 .ascii {
-  font-family: monospace;
   font-size: 0.1em;
 
   color: white;
@@ -121,4 +121,20 @@ body::after {
   animation:
     crt-effect 180s linear infinite,
     twinkle 3s infinite;
+}
+
+/* Responsive */
+
+@media (max-width: 600px) {
+  .container:not(footer) {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5em;
+    padding: 1em;
+    margin: 1em;
+  }
+
+  .ascii {
+    font-size: 0.3em;
+  }
 }
