@@ -17,28 +17,41 @@
   /* ---------- Battle minigame ---------- */
   const PLAYER = { hp: 100, hpMax: 100, mp: 50, mpMax: 50, limit: 0, thunderCd: 0 };
 
-  // Crystal-monster sprites: geometric SVG gems (no ASCII art)
-  const gem = (c1, c2, shape) => {
-    const shapes = {
-      shard: '<polygon points="50,4 86,40 70,96 30,96 14,40" />',
-      spire: '<polygon points="50,2 78,30 66,98 34,98 22,30" />',
-      prism: '<polygon points="50,8 90,50 50,92 10,50" />',
-    };
-    return (
+  // Geometric SVG sprites — sharp, black-stroked, blue/purple. No ASCII.
+  const SPRITES = {
+    bug:
       `<svg viewBox="0 0 100 100" aria-hidden="true">` +
-      `<defs><linearGradient id="g-${c2.slice(1)}" x1="0" y1="0" x2="1" y2="1">` +
-      `<stop offset="0" stop-color="${c1}"/><stop offset="1" stop-color="${c2}"/>` +
-      `</linearGradient></defs>` +
-      `<g fill="url(#g-${c2.slice(1)})" stroke="#fff" stroke-width="2">${shapes[shape]}</g>` +
-      `<polyline points="20,45 50,58 80,45" fill="none" stroke="rgba(255,255,255,.7)" stroke-width="1.5"/>` +
-      `</svg>`
-    );
+      `<line x1="28" y1="44" x2="10" y2="32" stroke="#000" stroke-width="4"/>` +
+      `<line x1="28" y1="58" x2="10" y2="70" stroke="#000" stroke-width="4"/>` +
+      `<line x1="72" y1="44" x2="90" y2="32" stroke="#000" stroke-width="4"/>` +
+      `<line x1="72" y1="58" x2="90" y2="70" stroke="#000" stroke-width="4"/>` +
+      `<line x1="42" y1="24" x2="36" y2="8" stroke="#000" stroke-width="4"/>` +
+      `<line x1="58" y1="24" x2="64" y2="8" stroke="#000" stroke-width="4"/>` +
+      `<polygon points="50,24 73,38 73,63 50,77 27,63 27,38" fill="#0c10f8" stroke="#000" stroke-width="4"/>` +
+      `<rect x="40" y="44" width="8" height="8" fill="#fff"/>` +
+      `<rect x="54" y="44" width="8" height="8" fill="#fff"/>` +
+      `</svg>`,
+    glitch:
+      `<svg viewBox="0 0 100 100" aria-hidden="true">` +
+      `<rect x="22" y="16" width="46" height="14" fill="#5b45c1" stroke="#000" stroke-width="4"/>` +
+      `<rect x="36" y="36" width="46" height="14" fill="#0c10f8" stroke="#000" stroke-width="4"/>` +
+      `<rect x="14" y="56" width="42" height="14" fill="#5b45c1" stroke="#000" stroke-width="4"/>` +
+      `<rect x="40" y="76" width="34" height="10" fill="#000"/>` +
+      `<rect x="48" y="40" width="8" height="6" fill="#fff"/>` +
+      `<rect x="28" y="60" width="8" height="6" fill="#fff"/>` +
+      `</svg>`,
+    lagspike:
+      `<svg viewBox="0 0 100 100" aria-hidden="true">` +
+      `<polygon points="50,4 63,56 50,96 37,56" fill="#0c10f8" stroke="#000" stroke-width="4"/>` +
+      `<polygon points="18,28 34,60 22,90" fill="#5b45c1" stroke="#000" stroke-width="4"/>` +
+      `<polygon points="82,28 66,60 78,90" fill="#5b45c1" stroke="#000" stroke-width="4"/>` +
+      `</svg>`,
   };
 
   const ENEMIES = [
-    { name: "Aether Shard", hp: 60, hpMax: 60, atkMin: 8, atkMax: 12, sprite: gem("#4fc3f7", "#1a73e8", "shard") },
-    { name: "Void Spire", hp: 80, hpMax: 80, atkMin: 10, atkMax: 15, sprite: gem("#8fd8ff", "#0288d1", "spire") },
-    { name: "Crystal Golem", hp: 120, hpMax: 120, atkMin: 5, atkMax: 10, sprite: gem("#0288d1", "#0a0a0f", "prism") },
+    { name: "Bug", hp: 60, hpMax: 60, atkMin: 8, atkMax: 12, sprite: SPRITES.bug },
+    { name: "Glitch", hp: 85, hpMax: 85, atkMin: 10, atkMax: 15, sprite: SPRITES.glitch },
+    { name: "Lag Spike", hp: 110, hpMax: 110, atkMin: 6, atkMax: 14, sprite: SPRITES.lagspike },
   ];
 
   const ACTIONS = {
@@ -153,7 +166,7 @@
       const dmg = rand(40, 50);
       enemy.hp = Math.max(0, enemy.hp - dmg);
       PLAYER.limit = 0;
-      logMsg("LIMIT BREAK! Asteroid Impact!", "log-crit");
+      logMsg("LIMIT BREAK! Ship It To Production!", "log-crit");
       dmgNumber(el("enemy-side"), "-" + dmg, "crit");
       shake(el("enemy-side"));
       render();

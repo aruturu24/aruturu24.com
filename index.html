@@ -3,21 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Arthur Gabryel — aruturu24</title>
+    <title>ARTHUR GABRYEL — ARUTURU24</title>
     <meta name="description" content="Arthur Gabryel (aruturu24) — passionate developer from São Paulo, Brazil. crazy about performance." />
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link href="style.css" rel="stylesheet" />
   </head>
   <body>
     <nav class="nav" aria-label="Main navigation">
-      <a class="brand grad-text" href="#hero">aruturu24</a>
+      <a class="brand" href="#hero">ARUTURU24</a>
       <input type="checkbox" id="nav-toggle" />
       <label class="burger" for="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></label>
       <ul class="nav-links">
-        <li><a href="#job-class">Job Class</a></li>
-        <li><a href="#quest-log">Quest Log</a></li>
-        <li><a href="#achievements">Achievements</a></li>
-        <li><a href="#battle-arena">Battle Arena</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#battle">Battle Arena</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
@@ -25,25 +27,37 @@
     <main>
       <!-- ============ HERO ============ -->
       <header id="hero" class="hero">
-        <div class="shapes" aria-hidden="true">
-          <span class="shape s1"></span><span class="shape s2"></span><span class="shape s3"></span>
-          <span class="shape s4"></span><span class="shape s5"></span><span class="shape s6"></span>
+        <div class="hero-deco" aria-hidden="true">
+          <span class="deco-box d1"></span>
+          <span class="deco-box d2"></span>
+          <span class="deco-box d3"></span>
+          <span class="deco-plus p1">+</span>
+          <span class="deco-plus p2">+</span>
+          <span class="deco-plus p3">+</span>
+          <span class="deco-plus p4">+</span>
         </div>
-        <p class="hero-kicker">São Paulo, Brazil</p>
-        <h1 class="hero-name grad-text">Arthur Gabryel</h1>
-        <p class="hero-handle">@aruturu24 — Black Mage main</p>
-        <p class="hero-tag">passionate developer. <em>crazy about performance.</em></p>
+        <p class="hero-kicker">// São Paulo, Brazil</p>
+        <h1 class="hero-name">Arthur<br />Gabryel</h1>
+        <p class="hero-handle">@aruturu24</p>
+        <p class="hero-tag">passionate developer. <strong>crazy about performance.</strong></p>
         <div class="hero-cta">
-          <a class="btn" href="#achievements">View Achievements</a>
-          <a class="btn ghost" href="#battle-arena">Enter Battle Arena</a>
+          <a class="btn" href="#projects">View Projects</a>
+          <a class="btn ghost" href="#battle">Enter Battle Arena</a>
         </div>
       </header>
 
-      <!-- ============ JOB CLASS / SKILLS ============ -->
-      <section id="job-class" class="section">
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee-track">
+          <span>Passionate Developer // Crazy About Performance // São Paulo BR // Ship It //&nbsp;</span>
+          <span>Passionate Developer // Crazy About Performance // São Paulo BR // Ship It //&nbsp;</span>
+        </div>
+      </div>
+
+      <!-- ============ SKILLS ============ -->
+      <section id="skills" class="section">
         <div data-reveal>
-          <h2 class="section-title">Job Class</h2>
-          <p class="section-sub">Black Mage — wielder of aetherial code &amp; disciplined logic</p>
+          <h2 class="section-title"><span class="section-num">01</span>Skills</h2>
+          <p class="section-sub">// tech stack — tools I build with every day</p>
           <div class="chip-grid">
             <span class="chip">Laravel</span>
             <span class="chip">JavaScript</span>
@@ -62,31 +76,31 @@
         </div>
       </section>
 
-      <!-- ============ QUEST LOG / WORK ============ -->
-      <section id="quest-log" class="section">
+      <!-- ============ EXPERIENCE ============ -->
+      <section id="experience" class="section">
         <div data-reveal>
-          <h2 class="section-title">Quest Log</h2>
-          <p class="section-sub">Completed quests — real-world experience</p>
-          <article class="panel quest">
-            <div class="quest-head">
+          <h2 class="section-title"><span class="section-num">02</span>Experience</h2>
+          <p class="section-sub">// where I've worked so far</p>
+          <article class="panel exp-card">
+            <div class="exp-head">
               <h3>BGF Consultoria em Engenharia LTDA</h3>
-              <span class="quest-role">IT Intern</span>
+              <span class="exp-role">IT Intern</span>
             </div>
-            <p class="quest-date">Jun 2023 — Jun 2025</p>
-            <ul class="quest-objectives">
+            <p class="exp-date">Jun 2023 — Jun 2025</p>
+            <ul class="exp-list">
               <li>Developed a web application for inspection results with Laravel, jQuery, DataTable and Bootstrap.</li>
               <li>Built an Android mobile app for on-site inspection reports with Java and Android Studio.</li>
             </ul>
-            <span class="quest-status">Quest Complete</span>
+            <span class="exp-status">Status: Completed</span>
           </article>
         </div>
       </section>
 
-      <!-- ============ ACHIEVEMENTS / PROJECTS ============ -->
-      <section id="achievements" class="section">
+      <!-- ============ PROJECTS ============ -->
+      <section id="projects" class="section">
         <div data-reveal>
-          <h2 class="section-title">Achievements</h2>
-          <p class="section-sub">Trophies forged in code — github.com/aruturu24</p>
+          <h2 class="section-title"><span class="section-num">03</span>Projects</h2>
+          <p class="section-sub">// things I've built — github.com/aruturu24</p>
           <div class="card-grid">
             <a class="panel card" href="https://github.com/aruturu24/burst" target="_blank" rel="noopener">
               <h3>burst</h3>
@@ -128,45 +142,41 @@
       </section>
 
       <!-- ============ BATTLE ARENA ============ -->
-      <section id="battle-arena" class="section">
+      <section id="battle" class="section">
         <div data-reveal>
-          <h2 class="section-title">Battle Arena</h2>
-          <p class="section-sub">A foe approaches. Prove your mettle, Black Mage.</p>
+          <h2 class="section-title"><span class="section-num">04</span>Battle Arena</h2>
+          <p class="section-sub">// a wild bug appears. time to squash it.</p>
           <div class="panel battle-stage">
             <div class="combatant" id="player-side">
               <div class="sprite" id="player-sprite">
                 <svg viewBox="0 0 100 100" aria-hidden="true">
-                  <defs>
-                    <linearGradient id="g-player" x1="0" y1="0" x2="1" y2="1">
-                      <stop offset="0" stop-color="#4fc3f7" /><stop offset="1" stop-color="#1a73e8" />
-                    </linearGradient>
-                  </defs>
-                  <polygon points="50,4 86,40 70,96 30,96 14,40" fill="url(#g-player)" stroke="#fff" stroke-width="2" />
-                  <polyline points="14,40 50,56 86,40" fill="none" stroke="rgba(255,255,255,.75)" stroke-width="1.5" />
-                  <line x1="50" y1="56" x2="50" y2="96" stroke="rgba(255,255,255,.75)" stroke-width="1.5" />
+                  <polygon points="50,6 84,38 70,94 30,94 16,38" fill="#0c10f8" stroke="#000" stroke-width="4" />
+                  <polyline points="16,38 50,54 84,38" fill="none" stroke="#fff" stroke-width="3" />
+                  <line x1="50" y1="54" x2="50" y2="94" stroke="#fff" stroke-width="3" />
                 </svg>
               </div>
-              <h3 class="combatant-name">Black Mage</h3>
+              <h3 class="combatant-name">Developer</h3>
               <div class="stat-row"><span>HP</span><div class="bar"><div class="fill hp" id="player-hp"></div></div><span id="player-hp-text"></span></div>
               <div class="stat-row"><span>MP</span><div class="bar"><div class="fill mp" id="player-mp"></div></div><span id="player-mp-text"></span></div>
               <div class="stat-row"><span>LB</span><div class="bar"><div class="fill lb" id="player-limit"></div></div><span id="player-limit-text"></span></div>
             </div>
+            <div class="vs" aria-hidden="true">VS</div>
             <div class="combatant" id="enemy-side">
               <div class="sprite" id="enemy-sprite"></div>
               <h3 class="combatant-name" id="enemy-name"></h3>
-              <div class="stat-row"><span>HP</span><div class="bar"><div class="fill hp" id="enemy-hp"></div></div><span id="enemy-hp-text"></span></div>
+              <div class="stat-row"><span>HP</span><div class="bar"><div class="fill enemy" id="enemy-hp"></div></div><span id="enemy-hp-text"></span></div>
             </div>
           </div>
 
           <div class="battle-menu" id="battle-menu">
-            <button data-action="fire">Fire</button>
-            <button data-action="blizzard">Blizzard</button>
-            <button data-action="thunder">Thunder</button>
-            <button data-action="cure">Cure</button>
+            <button data-action="fire">Fire <span class="cost">10 MP</span></button>
+            <button data-action="blizzard">Blizzard <span class="cost">10 MP</span></button>
+            <button data-action="thunder">Thunder <span class="cost">15 MP</span></button>
+            <button data-action="cure">Cure <span class="cost">12 MP</span></button>
             <button data-action="limit" id="limit-btn" disabled>Limit Break</button>
           </div>
 
-          <div class="battle-log" id="battle-log"></div>
+          <div class="battle-log" id="battle-log" aria-live="polite"></div>
           <button class="btn new-game-btn" id="new-game" hidden>New Battle</button>
         </div>
       </section>
@@ -174,9 +184,9 @@
       <!-- ============ CONTACT ============ -->
       <section id="contact" class="section">
         <div data-reveal>
-          <h2 class="section-title">Contact</h2>
-          <p class="section-sub">Join my linkshell — open a communications channel</p>
-          <ul class="linkshell">
+          <h2 class="section-title"><span class="section-num">05</span>Contact</h2>
+          <p class="section-sub">// let's connect — pick a channel</p>
+          <ul class="contact-grid">
             <li><a class="btn ghost" href="https://github.com/aruturu24" target="_blank" rel="noopener">GitHub</a></li>
             <li><a class="btn ghost" href="https://www.linkedin.com/in/aruturu24" target="_blank" rel="noopener">LinkedIn</a></li>
             <li><a class="btn ghost" href="mailto:aruturu24@hotmail.com">Email</a></li>
@@ -188,7 +198,7 @@
     </main>
 
     <footer class="footer">
-      <p>© 2026 Arthur Gabryel — aruturu24</p>
+      <p>© 2026 Arthur Gabryel — aruturu24 // Built with raw HTML + CSS + JS</p>
     </footer>
 
     <script src="game.js"></script>

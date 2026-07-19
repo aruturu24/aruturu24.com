@@ -1,28 +1,47 @@
 # aruturu24.com — Portfolio Website
 
-## Project
-Personal portfolio website. FFXIV-inspired with Neo-Y2K aesthetic.
-Must be visually stunning, mobile-first, and include an RPG battle minigame.
+## STYLE: Neo-Brutalist Tech — AGGRESSIVE, SHARP, HIGH-CONTRAST
 
-## Design Direction — UPDATED
-- **Colors:** White (#fff), Blue (#4fc3f7, #0288d1, #1a73e8), Black (#0a0a0f, #111)
-- **NO ASCII art, NO CRT scanlines, NO retro pixel style**
-- **FFXIV + Neo-Y2K aesthetic:** clean geometric shapes, glassmorphism, gradient meshes, 
-  subtle shimmer effects, holographic accents, sleek UI panels, crystal motifs
-- Mobile-first responsive design — must look perfect on phones
-- Smooth animations, parallax-like effects, intersection observer reveals
-- Sections: Hero, Job Class (Skills), Quest Log (Work), Achievements (Projects), Battle Arena, Contact
+### COLOR SCHEME
+- Background: WHITE (#f8f9f9, #ededef) — NOT dark
+- Primary accent: ELECTRIC BLUE (#0c10f8) — vivid, intense, aggressive
+- Secondary accent: PURPLE (#5b45c1)
+- Borders: THICK BLACK (#000000) — 3-4px solid
+- Text: near-black with blue undertone (#030153), dim: #8d8ea6
+- NO gold, NO soft pastels, NO dark backgrounds
 
-## Updated Profile Info
+### DESIGN RULES
+- THICK BLACK BORDERS (3-4px solid) on all panels, cards, buttons
+- SHARP CORNERS — 0-2px border-radius maximum. NO rounded bubbly shapes.
+- ELECTRIC BLUE text for headings, links, accents (#0c10f8)
+- NOISE TEXTURE on white backgrounds (SVG feTurbulence filter, subtle grain)
+- NO glassmorphism, NO blur, NO soft shadows, NO bubbly panels
+- Hover effects: sharp border color change to blue, slight scale transform
+- Typography: "Space Grotesk" — geometric, techy. UPPERCASE headings with wide letter-spacing.
+- Aggressive, bold, authoritative feel — NOT soft, NOT playful
+
+### WHAT TO REMOVE
+- ALL rounded corners > 2px
+- ALL soft shadows, glassmorphism, blur effects
+- ALL bubbly/soft aesthetic elements
+- ALL dark backgrounds
+- ALL gold/purple pastel colors
+- ALL FFXIV references in text
+- ALL ASCII art
+- ALL CRT/scanline effects
+
+### SECTION NAMES
+Hero, Skills, Experience, Projects, Battle Arena, Contact
+
+### Profile Data
 
 **Arthur Gabryel (aruturu24)**
 - Location: São Paulo, Brazil
 - Bio: passionate developer. crazy about performance.
-- Company: BGF Consultoria em Engenharia LTDA
 - LinkedIn: linkedin.com/in/aruturu24
 - GitHub: github.com/aruturu24
 - Email: aruturu24@hotmail.com
-- Twitter/X: x.com/aruturu24
+- X: x.com/aruturu24
 - Instagram: instagram.com/aruturu24
 
 ### Work Experience
@@ -30,39 +49,26 @@ Must be visually stunning, mobile-first, and include an RPG battle minigame.
   - Developed web application for inspection results (Laravel, jQuery, DataTable, Bootstrap)
   - Built Android mobile app for inspection reports (Java, Android Studio)
 
-### Skills/Tech Stack
+### Skills
 Laravel, JavaScript, TypeScript, React Native, Java, PHP, Python, Rust, SQL, Git, HTML/CSS, Expo, Flask
 
-### GitHub Projects (highlight these)
-1. **burst** — Habit tracker app. Track habits and get notified when you miss a day. (TypeScript, React Native, Expo)
-2. **shito** — Create and manage D&D 5e character sheets from the terminal. (Rust)
-3. **tamashii** — Website to manage Call of Cthulhu 7th Edition character sheets. (HTML)
-4. **news-translator** — Flask backend that auto-translates news articles. (Python, Flask)
-5. **matrix** — Matrix rain effect recreation in JavaScript.
-6. **calculator** — Simple calculator with HTML, CSS, and JavaScript.
-7. **website-runinlinux** — Check if a game runs on Linux. (CSS, Web)
+### GitHub Projects
+1. **burst** — Habit tracker app (TypeScript, React Native, Expo)
+2. **shito** — D&D 5e character sheets terminal app (Rust)
+3. **tamashii** — Call of Cthulhu 7e character sheet website (HTML)
+4. **news-translator** — Flask backend that auto-translates news (Python, Flask)
+5. **matrix** — Matrix rain effect in JavaScript
+6. **calculator** — Simple calculator (HTML, CSS, JS)
+7. **website-runinlinux** — Check if a game runs on Linux (CSS)
+
+### Battle Minigame
+- Player: "Developer" class, 100 HP, 50 MP, Limit Break gauge
+- Actions: Fire, Blizzard, Thunder, Cure, Limit Break
+- 3 enemies (Bug, Glitch, Lag Spike), random, turn-based
+- Geometric SVG sprites (NO ASCII)
+- UI: thick black borders, sharp corners, blue accents
 
 ## Tech Stack
-- Static HTML/CSS/JS (no framework, no build tools)
-- Must remain deployable to GitHub Pages
-- All assets inline or CDN-hosted (no npm/node dependencies)
-
-## File Structure Target
-```
-index.html    — single page, all sections
-style.css     — all styles
-game.js       — battle minigame logic
-```
-Three files max. Everything else is CDN or inline.
-
-## Ponytail Rules (MUST FOLLOW)
-The ladder — stop at the first rung that holds:
-1. Does this need to exist at all? (YAGNI)
-2. Already in this codebase? Reuse it.
-3. Stdlib does it? Use it.
-4. Native platform feature covers it? CSS over JS.
-5. Already-installed dependency? Use it. Never add a new one.
-6. Can it be one line? One line.
-7. Only then: the minimum code that works.
-
-Rules: No frameworks. No boilerplate. Fewest files. Shortest working diff. Vanilla JS/CSS only.
+- Any library/framework OK if it improves the result
+- Must be deployable to GitHub Pages
+- Google Fonts CDN OK
