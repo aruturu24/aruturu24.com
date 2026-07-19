@@ -15,6 +15,8 @@
   );
 
   /* ---------- Cursor sparkle (fine pointers only) ---------- */
+  /* RAF loop runs ONLY while the battle section is on screen and the tab
+     is visible — saves battery/CPU everywhere else on the page. */
   if (window.matchMedia("(pointer: fine)").matches) {
     const star = document.createElement("div");
     star.className = "cursor-star";
@@ -22,18 +24,41 @@
     star.setAttribute("aria-hidden", "true");
     document.body.appendChild(star);
     let sx = -100, sy = -100, tx = -100, ty = -100;
+    let battleVisible = false;
+    let rafId = null;
     document.addEventListener("mousemove", (e) => {
       tx = e.clientX;
       ty = e.clientY;
-      star.classList.add("on");
+      if (battleVisible) star.classList.add("on");
     });
     document.addEventListener("mouseleave", () => star.classList.remove("on"));
-    (function loop() {
+
+    const loop = () => {
+      rafId = null;
       sx += (tx - sx) * 0.16;
       sy += (ty - sy) * 0.16;
       star.style.transform = `translate(${sx + 14}px, ${sy + 14}px)`;
-      requestAnimationFrame(loop);
-    })();
+      if (battleVisible && !document.hidden) rafId = requestAnimationFrame(loop);
+    };
+    const updateLoop = () => {
+      const shouldRun = battleVisible && !document.hidden;
+      if (shouldRun && rafId === null) {
+        rafId = requestAnimationFrame(loop);
+      } else if (!shouldRun && rafId !== null) {
+        cancelAnimationFrame(rafId);
+        rafId = null;
+        star.classList.remove("on");
+      }
+    };
+    const battleIO = new IntersectionObserver(
+      (entries) => entries.forEach((e) => {
+        battleVisible = e.isIntersecting;
+        updateLoop();
+      }),
+      { threshold: 0.05 }
+    );
+    battleIO.observe(document.getElementById("battle"));
+    document.addEventListener("visibilitychange", updateLoop);
   }
 
   /* ---------- Battle minigame ---------- */
