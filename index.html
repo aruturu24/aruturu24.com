@@ -7,12 +7,19 @@
     <meta name="description" content="Arthur Gabryel (aruturu24) — passionate developer from São Paulo, Brazil. crazy about performance." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
     <link href="style.css" rel="stylesheet" />
   </head>
   <body>
+    <!-- fixed decorative layer behind everything -->
+    <div class="bg-deco" aria-hidden="true">
+      <span class="blob blob--soft b1"></span>
+      <span class="blob blob--soft blob--alt b2"></span>
+      <span class="blob blob--soft b3"></span>
+    </div>
+
     <nav class="nav" aria-label="Main navigation">
-      <a class="brand" href="#hero">ARUTURU24</a>
+      <a class="brand acid-text" href="#hero">ARUTURU24</a>
       <input type="checkbox" id="nav-toggle" />
       <label class="burger" for="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></label>
       <ul class="nav-links">
@@ -28,17 +35,25 @@
       <!-- ============ HERO ============ -->
       <header id="hero" class="hero">
         <div class="hero-deco" aria-hidden="true">
-          <span class="deco-box d1"></span>
-          <span class="deco-box d2"></span>
-          <span class="deco-box d3"></span>
-          <span class="deco-plus p1">+</span>
-          <span class="deco-plus p2">+</span>
-          <span class="deco-plus p3">+</span>
-          <span class="deco-plus p4">+</span>
+          <span class="blob h1"></span>
+          <span class="blob blob--alt h2"></span>
+          <span class="deco-tri t1"></span>
+          <span class="deco-tri t2"></span>
+          <span class="deco-tri t3"></span>
+          <span class="deco-dot dt1"></span>
+          <span class="deco-dot dt2"></span>
+          <span class="deco-dot dt3"></span>
+          <span class="deco-dot dt4"></span>
+          <span class="spark spark--p">✦</span>
+          <span class="spark spark--l">✧</span>
+          <span class="spark spark--y">★</span>
+          <span class="spark spark--c">✦</span>
+          <span class="spark spark--p">✧</span>
+          <span class="spark spark--l">★</span>
         </div>
-        <p class="hero-kicker">// São Paulo, Brazil</p>
-        <h1 class="hero-name">Arthur<br />Gabryel</h1>
-        <p class="hero-handle">@aruturu24</p>
+        <p class="hero-kicker tilt-l">// São Paulo, Brazil</p>
+        <h1 class="hero-name"><span class="chrome-text">Arthur</span><br /><span class="chrome-text">Gabryel</span></h1>
+        <p class="hero-handle acid-text">@aruturu24</p>
         <p class="hero-tag">passionate developer. <strong>crazy about performance.</strong></p>
         <div class="hero-cta">
           <a class="btn" href="#projects">View Projects</a>
@@ -46,10 +61,11 @@
         </div>
       </header>
 
+      <!-- ============ MARQUEE ============ -->
       <div class="marquee" aria-hidden="true">
         <div class="marquee-track">
-          <span>Passionate Developer // Crazy About Performance // São Paulo BR // Ship It //&nbsp;</span>
-          <span>Passionate Developer // Crazy About Performance // São Paulo BR // Ship It //&nbsp;</span>
+          <span>✦ Passionate Developer ✧ Crazy About Performance ✦ São Paulo BR ✧ Ship It ✦ Passionate Developer ✧ Crazy About Performance ✦ São Paulo BR ✧ Ship It ✦&nbsp;</span>
+          <span>✦ Passionate Developer ✧ Crazy About Performance ✦ São Paulo BR ✧ Ship It ✦ Passionate Developer ✧ Crazy About Performance ✦ São Paulo BR ✧ Ship It ✦&nbsp;</span>
         </div>
       </div>
 
@@ -58,6 +74,12 @@
         <div data-reveal>
           <h2 class="section-title"><span class="section-num">01</span>Skills</h2>
           <p class="section-sub">// tech stack — tools I build with every day</p>
+          <div class="skill-deco" aria-hidden="true">
+            <span class="blob s1"></span>
+            <span class="spark spark--p">✦</span>
+            <span class="spark spark--c">✧</span>
+            <span class="spark spark--y">★</span>
+          </div>
           <div class="chip-grid">
             <span class="chip">Laravel</span>
             <span class="chip">JavaScript</span>
@@ -81,7 +103,7 @@
         <div data-reveal>
           <h2 class="section-title"><span class="section-num">02</span>Experience</h2>
           <p class="section-sub">// where I've worked so far</p>
-          <article class="panel exp-card">
+          <article class="panel exp-card tilt-l">
             <div class="exp-head">
               <h3>BGF Consultoria em Engenharia LTDA</h3>
               <span class="exp-role">IT Intern</span>
@@ -102,37 +124,37 @@
           <h2 class="section-title"><span class="section-num">03</span>Projects</h2>
           <p class="section-sub">// things I've built — github.com/aruturu24</p>
           <div class="card-grid">
-            <a class="panel card" href="https://github.com/aruturu24/burst" target="_blank" rel="noopener">
+            <a class="panel card tilt-card" href="https://github.com/aruturu24/burst" target="_blank" rel="noopener">
               <h3>burst</h3>
               <p>Habit tracker app. Track habits and get notified when you miss a day.</p>
               <p class="tags">TypeScript · React Native · Expo</p>
             </a>
-            <a class="panel card" href="https://github.com/aruturu24/shito" target="_blank" rel="noopener">
+            <a class="panel card tilt-card" href="https://github.com/aruturu24/shito" target="_blank" rel="noopener">
               <h3>shito</h3>
               <p>Create and manage D&amp;D 5e character sheets from the terminal.</p>
               <p class="tags">Rust</p>
             </a>
-            <a class="panel card" href="https://github.com/aruturu24/tamashii" target="_blank" rel="noopener">
+            <a class="panel card tilt-card" href="https://github.com/aruturu24/tamashii" target="_blank" rel="noopener">
               <h3>tamashii</h3>
               <p>Website to manage Call of Cthulhu 7th Edition character sheets.</p>
               <p class="tags">HTML · Web</p>
             </a>
-            <a class="panel card" href="https://github.com/aruturu24/news-translator" target="_blank" rel="noopener">
+            <a class="panel card tilt-card" href="https://github.com/aruturu24/news-translator" target="_blank" rel="noopener">
               <h3>news-translator</h3>
               <p>Flask backend that automatically translates news articles.</p>
               <p class="tags">Python · Flask</p>
             </a>
-            <a class="panel card" href="https://github.com/aruturu24/matrix" target="_blank" rel="noopener">
+            <a class="panel card tilt-card" href="https://github.com/aruturu24/matrix" target="_blank" rel="noopener">
               <h3>matrix</h3>
               <p>Matrix rain effect recreation.</p>
               <p class="tags">JavaScript</p>
             </a>
-            <a class="panel card" href="https://github.com/aruturu24/calculator" target="_blank" rel="noopener">
+            <a class="panel card tilt-card" href="https://github.com/aruturu24/calculator" target="_blank" rel="noopener">
               <h3>calculator</h3>
               <p>Simple calculator with a clean interface.</p>
               <p class="tags">HTML · CSS · JavaScript</p>
             </a>
-            <a class="panel card" href="https://github.com/aruturu24/website-runinlinux" target="_blank" rel="noopener">
+            <a class="panel card tilt-card" href="https://github.com/aruturu24/website-runinlinux" target="_blank" rel="noopener">
               <h3>website-runinlinux</h3>
               <p>Check if a game runs on Linux.</p>
               <p class="tags">CSS · Web</p>
@@ -150,9 +172,15 @@
             <div class="combatant" id="player-side">
               <div class="sprite" id="player-sprite">
                 <svg viewBox="0 0 100 100" aria-hidden="true">
-                  <polygon points="50,6 84,38 70,94 30,94 16,38" fill="#0c10f8" stroke="#000" stroke-width="4" />
-                  <polyline points="16,38 50,54 84,38" fill="none" stroke="#fff" stroke-width="3" />
-                  <line x1="50" y1="54" x2="50" y2="94" stroke="#fff" stroke-width="3" />
+                  <defs>
+                    <linearGradient id="g-player" x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0" stop-color="#44d2fa" />
+                      <stop offset="1" stop-color="#dcafe8" />
+                    </linearGradient>
+                  </defs>
+                  <rect x="46" y="6" width="8" height="9" fill="#fff740" />
+                  <ellipse cx="50" cy="54" rx="32" ry="36" fill="url(#g-player)" />
+                  <rect x="34" y="46" width="32" height="12" rx="6" fill="#fff" />
                 </svg>
               </div>
               <h3 class="combatant-name">Developer</h3>
@@ -160,7 +188,7 @@
               <div class="stat-row"><span>MP</span><div class="bar"><div class="fill mp" id="player-mp"></div></div><span id="player-mp-text"></span></div>
               <div class="stat-row"><span>LB</span><div class="bar"><div class="fill lb" id="player-limit"></div></div><span id="player-limit-text"></span></div>
             </div>
-            <div class="vs" aria-hidden="true">VS</div>
+            <div class="vs acid-text" aria-hidden="true">VS</div>
             <div class="combatant" id="enemy-side">
               <div class="sprite" id="enemy-sprite"></div>
               <h3 class="combatant-name" id="enemy-name"></h3>
@@ -186,12 +214,18 @@
         <div data-reveal>
           <h2 class="section-title"><span class="section-num">05</span>Contact</h2>
           <p class="section-sub">// let's connect — pick a channel</p>
+          <div class="contact-deco" aria-hidden="true">
+            <span class="blob c1"></span>
+            <span class="spark spark--p">✦</span>
+            <span class="spark spark--c">✧</span>
+            <span class="spark spark--y">★</span>
+          </div>
           <ul class="contact-grid">
-            <li><a class="btn ghost" href="https://github.com/aruturu24" target="_blank" rel="noopener">GitHub</a></li>
-            <li><a class="btn ghost" href="https://www.linkedin.com/in/aruturu24" target="_blank" rel="noopener">LinkedIn</a></li>
-            <li><a class="btn ghost" href="mailto:aruturu24@hotmail.com">Email</a></li>
-            <li><a class="btn ghost" href="https://x.com/aruturu24" target="_blank" rel="noopener">X / Twitter</a></li>
-            <li><a class="btn ghost" href="https://www.instagram.com/aruturu24/" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a class="btn ghost tilt-l" href="https://github.com/aruturu24" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a class="btn ghost tilt-r" href="https://www.linkedin.com/in/aruturu24" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a class="btn ghost tilt-l contact-email" href="mailto:aruturu24@hotmail.com">Email</a></li>
+            <li><a class="btn ghost tilt-r" href="https://x.com/aruturu24" target="_blank" rel="noopener">X / Twitter</a></li>
+            <li><a class="btn ghost tilt-l" href="https://www.instagram.com/aruturu24/" target="_blank" rel="noopener">Instagram</a></li>
           </ul>
         </div>
       </section>

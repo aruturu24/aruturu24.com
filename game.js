@@ -17,34 +17,40 @@
   /* ---------- Battle minigame ---------- */
   const PLAYER = { hp: 100, hpMax: 100, mp: 50, mpMax: 50, limit: 0, thunderCd: 0 };
 
-  // Geometric SVG sprites — sharp, black-stroked, blue/purple. No ASCII.
+  // Organic blobby SVG sprites — acid gradients, soft shapes, no hard strokes.
   const SPRITES = {
     bug:
       `<svg viewBox="0 0 100 100" aria-hidden="true">` +
-      `<line x1="28" y1="44" x2="10" y2="32" stroke="#000" stroke-width="4"/>` +
-      `<line x1="28" y1="58" x2="10" y2="70" stroke="#000" stroke-width="4"/>` +
-      `<line x1="72" y1="44" x2="90" y2="32" stroke="#000" stroke-width="4"/>` +
-      `<line x1="72" y1="58" x2="90" y2="70" stroke="#000" stroke-width="4"/>` +
-      `<line x1="42" y1="24" x2="36" y2="8" stroke="#000" stroke-width="4"/>` +
-      `<line x1="58" y1="24" x2="64" y2="8" stroke="#000" stroke-width="4"/>` +
-      `<polygon points="50,24 73,38 73,63 50,77 27,63 27,38" fill="#0c10f8" stroke="#000" stroke-width="4"/>` +
-      `<rect x="40" y="44" width="8" height="8" fill="#fff"/>` +
-      `<rect x="54" y="44" width="8" height="8" fill="#fff"/>` +
+      `<defs><linearGradient id="g-bug" x1="0" y1="0" x2="1" y2="1">` +
+      `<stop offset="0" stop-color="#ff2d9b"/><stop offset="1" stop-color="#9b59b6"/></linearGradient></defs>` +
+      `<line x1="30" y1="46" x2="12" y2="34" stroke="#1a1a2e" stroke-width="4" stroke-linecap="round"/>` +
+      `<line x1="30" y1="58" x2="12" y2="70" stroke="#1a1a2e" stroke-width="4" stroke-linecap="round"/>` +
+      `<line x1="70" y1="46" x2="88" y2="34" stroke="#1a1a2e" stroke-width="4" stroke-linecap="round"/>` +
+      `<line x1="70" y1="58" x2="88" y2="70" stroke="#1a1a2e" stroke-width="4" stroke-linecap="round"/>` +
+      `<line x1="42" y1="26" x2="37" y2="10" stroke="#1a1a2e" stroke-width="4" stroke-linecap="round"/>` +
+      `<line x1="58" y1="26" x2="63" y2="10" stroke="#1a1a2e" stroke-width="4" stroke-linecap="round"/>` +
+      `<circle cx="37" cy="10" r="4" fill="#b8ff3a"/>` +
+      `<ellipse cx="50" cy="52" rx="26" ry="22" fill="url(#g-bug)"/>` +
+      `<circle cx="42" cy="48" r="7" fill="#fff"/><circle cx="58" cy="48" r="7" fill="#fff"/>` +
+      `<circle cx="42" cy="48" r="3" fill="#1a1a2e"/><circle cx="58" cy="48" r="3" fill="#1a1a2e"/>` +
       `</svg>`,
     glitch:
       `<svg viewBox="0 0 100 100" aria-hidden="true">` +
-      `<rect x="22" y="16" width="46" height="14" fill="#5b45c1" stroke="#000" stroke-width="4"/>` +
-      `<rect x="36" y="36" width="46" height="14" fill="#0c10f8" stroke="#000" stroke-width="4"/>` +
-      `<rect x="14" y="56" width="42" height="14" fill="#5b45c1" stroke="#000" stroke-width="4"/>` +
-      `<rect x="40" y="76" width="34" height="10" fill="#000"/>` +
-      `<rect x="48" y="40" width="8" height="6" fill="#fff"/>` +
-      `<rect x="28" y="60" width="8" height="6" fill="#fff"/>` +
+      `<defs><linearGradient id="g-glitch" x1="0" y1="0" x2="1" y2="1">` +
+      `<stop offset="0" stop-color="#44d2fa"/><stop offset="1" stop-color="#9b59b6"/></linearGradient></defs>` +
+      `<rect x="20" y="16" width="46" height="20" rx="14" fill="url(#g-glitch)" opacity="0.9"/>` +
+      `<rect x="34" y="34" width="46" height="20" rx="14" fill="#ff2d9b" opacity="0.9"/>` +
+      `<rect x="18" y="52" width="42" height="20" rx="14" fill="url(#g-glitch)" opacity="0.9"/>` +
+      `<rect x="42" y="34" width="10" height="8" rx="4" fill="#fff"/>` +
+      `<rect x="26" y="54" width="10" height="8" rx="4" fill="#fff"/>` +
       `</svg>`,
     lagspike:
       `<svg viewBox="0 0 100 100" aria-hidden="true">` +
-      `<polygon points="50,4 63,56 50,96 37,56" fill="#0c10f8" stroke="#000" stroke-width="4"/>` +
-      `<polygon points="18,28 34,60 22,90" fill="#5b45c1" stroke="#000" stroke-width="4"/>` +
-      `<polygon points="82,28 66,60 78,90" fill="#5b45c1" stroke="#000" stroke-width="4"/>` +
+      `<defs><linearGradient id="g-lag" x1="0" y1="0" x2="1" y2="1">` +
+      `<stop offset="0" stop-color="#44d2fa"/><stop offset="1" stop-color="#b8ff3a"/></linearGradient></defs>` +
+      `<path d="M50 6 C66 26 64 46 58 64 C72 60 82 74 70 90 C58 98 42 98 30 90 C18 74 28 60 42 64 C36 46 34 26 50 6 Z" fill="url(#g-lag)"/>` +
+      `<circle cx="50" cy="56" r="9" fill="#fff"/>` +
+      `<circle cx="50" cy="56" r="4" fill="#1a1a2e"/>` +
       `</svg>`,
   };
 
