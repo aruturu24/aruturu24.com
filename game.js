@@ -14,6 +14,28 @@
     a.addEventListener("click", () => (toggle.checked = false))
   );
 
+  /* ---------- Cursor sparkle (fine pointers only) ---------- */
+  if (window.matchMedia("(pointer: fine)").matches) {
+    const star = document.createElement("div");
+    star.className = "cursor-star";
+    star.textContent = "✦";
+    star.setAttribute("aria-hidden", "true");
+    document.body.appendChild(star);
+    let sx = -100, sy = -100, tx = -100, ty = -100;
+    document.addEventListener("mousemove", (e) => {
+      tx = e.clientX;
+      ty = e.clientY;
+      star.classList.add("on");
+    });
+    document.addEventListener("mouseleave", () => star.classList.remove("on"));
+    (function loop() {
+      sx += (tx - sx) * 0.16;
+      sy += (ty - sy) * 0.16;
+      star.style.transform = `translate(${sx + 14}px, ${sy + 14}px)`;
+      requestAnimationFrame(loop);
+    })();
+  }
+
   /* ---------- Battle minigame ---------- */
   const PLAYER = { hp: 100, hpMax: 100, mp: 50, mpMax: 50, limit: 0, thunderCd: 0 };
 

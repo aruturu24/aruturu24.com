@@ -15,11 +15,16 @@
     <div class="bg-deco" aria-hidden="true">
       <span class="blob blob--soft b1"></span>
       <span class="blob blob--soft blob--alt b2"></span>
-      <span class="blob blob--soft b3"></span>
+      <span class="blob blob--soft blob--lime b3"></span>
+      <span class="spark spark--p" style="top:18%;left:42%;font-size:1.4rem">✦</span>
+      <span class="spark spark--y" style="top:48%;left:8%;font-size:1.1rem;animation-delay:.7s">✧</span>
+      <span class="spark spark--c" style="top:66%;right:10%;font-size:1.5rem;animation-delay:1.3s">★</span>
+      <span class="spark spark--l" style="top:82%;left:48%;font-size:1.2rem;animation-delay:.4s">✦</span>
+      <span class="spark spark--p" style="top:6%;right:22%;font-size:1rem;animation-delay:1.8s">✧</span>
     </div>
 
     <nav class="nav" aria-label="Main navigation">
-      <a class="brand acid-text" href="#hero">ARUTURU24</a>
+      <a class="brand acid-text" href="#hero">ARUTURU<span class="brand-accent">24</span></a>
       <input type="checkbox" id="nav-toggle" />
       <label class="burger" for="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></label>
       <ul class="nav-links">
@@ -37,24 +42,29 @@
         <div class="hero-deco" aria-hidden="true">
           <span class="blob h1"></span>
           <span class="blob blob--alt h2"></span>
+          <span class="blob h3"></span>
           <span class="deco-tri t1"></span>
           <span class="deco-tri t2"></span>
           <span class="deco-tri t3"></span>
+          <span class="deco-tri t4"></span>
           <span class="deco-dot dt1"></span>
           <span class="deco-dot dt2"></span>
           <span class="deco-dot dt3"></span>
           <span class="deco-dot dt4"></span>
+          <span class="deco-dot dt5"></span>
           <span class="spark spark--p">✦</span>
           <span class="spark spark--l">✧</span>
           <span class="spark spark--y">★</span>
           <span class="spark spark--c">✦</span>
           <span class="spark spark--p">✧</span>
           <span class="spark spark--l">★</span>
+          <span class="spark spark--y">✦</span>
+          <span class="spark spark--c">✧</span>
         </div>
         <p class="hero-kicker tilt-l">// São Paulo, Brazil</p>
         <h1 class="hero-name"><span class="chrome-text">Arthur</span><br /><span class="chrome-text">Gabryel</span></h1>
         <p class="hero-handle acid-text">@aruturu24</p>
-        <p class="hero-tag">passionate developer. <strong>crazy about performance.</strong></p>
+        <p class="hero-tag"><em>passionate developer.</em> <strong>crazy about performance.</strong></p>
         <div class="hero-cta">
           <a class="btn" href="#projects">View Projects</a>
           <a class="btn ghost" href="#battle">Enter Battle Arena</a>
@@ -76,6 +86,11 @@
           <p class="section-sub">// tech stack — tools I build with every day</p>
           <div class="skill-deco" aria-hidden="true">
             <span class="blob s1"></span>
+            <span class="blob blob--alt s2"></span>
+            <span class="deco-tri st1"></span>
+            <span class="deco-tri st2"></span>
+            <span class="deco-dot sd1"></span>
+            <span class="deco-dot sd2"></span>
             <span class="spark spark--p">✦</span>
             <span class="spark spark--c">✧</span>
             <span class="spark spark--y">★</span>
@@ -103,6 +118,13 @@
         <div data-reveal>
           <h2 class="section-title"><span class="section-num">02</span>Experience</h2>
           <p class="section-sub">// where I've worked so far</p>
+          <div class="exp-deco" aria-hidden="true">
+            <span class="blob x1"></span>
+            <span class="deco-dot xd1"></span>
+            <span class="deco-dot xd2"></span>
+            <span class="spark spark--y">✦</span>
+            <span class="spark spark--p">✧</span>
+          </div>
           <article class="panel exp-card tilt-l">
             <div class="exp-head">
               <h3>BGF Consultoria em Engenharia LTDA</h3>
@@ -123,6 +145,12 @@
         <div data-reveal>
           <h2 class="section-title"><span class="section-num">03</span>Projects</h2>
           <p class="section-sub">// things I've built — github.com/aruturu24</p>
+          <div class="proj-deco" aria-hidden="true">
+            <span class="blob p1"></span>
+            <span class="deco-tri pt1"></span>
+            <span class="spark spark--c">✦</span>
+            <span class="spark spark--l">★</span>
+          </div>
           <div class="card-grid">
             <a class="panel card tilt-card" href="https://github.com/aruturu24/burst" target="_blank" rel="noopener">
               <h3>burst</h3>
@@ -168,6 +196,10 @@
         <div data-reveal>
           <h2 class="section-title"><span class="section-num">04</span>Battle Arena</h2>
           <p class="section-sub">// a wild bug appears. time to squash it.</p>
+          <div class="battle-deco" aria-hidden="true">
+            <span class="spark spark--p">✦</span>
+            <span class="spark spark--y">★</span>
+          </div>
           <div class="panel battle-stage">
             <div class="combatant" id="player-side">
               <div class="sprite" id="player-sprite">
@@ -178,7 +210,7 @@
                       <stop offset="1" stop-color="#dcafe8" />
                     </linearGradient>
                   </defs>
-                  <rect x="46" y="6" width="8" height="9" fill="#fff740" />
+                  <path d="M50 4 l2.4 4.8 5.2 1.4 -4 4.2 .6 5.4 -4.2 -2 -4.2 2 .6 -5.4 -4 -4.2 5.2 -1.4 Z" fill="#fff740" />
                   <ellipse cx="50" cy="54" rx="32" ry="36" fill="url(#g-player)" />
                   <rect x="34" y="46" width="32" height="12" rx="6" fill="#fff" />
                 </svg>
@@ -216,6 +248,8 @@
           <p class="section-sub">// let's connect — pick a channel</p>
           <div class="contact-deco" aria-hidden="true">
             <span class="blob c1"></span>
+            <span class="deco-tri ct1"></span>
+            <span class="deco-dot cd1"></span>
             <span class="spark spark--p">✦</span>
             <span class="spark spark--c">✧</span>
             <span class="spark spark--y">★</span>
@@ -232,6 +266,7 @@
     </main>
 
     <footer class="footer">
+      <p class="footer-deco" aria-hidden="true">✦ ✧ ★ ✧ ✦</p>
       <p>© 2026 Arthur Gabryel — aruturu24 // Built with raw HTML + CSS + JS</p>
     </footer>
 
