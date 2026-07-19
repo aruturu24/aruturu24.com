@@ -3,18 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>aruturu24 — Black Mage Portfolio</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Roboto+Mono:wght@400;500&display=swap"
-      rel="stylesheet"
-    />
+    <title>Arthur Gabryel — aruturu24</title>
+    <meta name="description" content="Arthur Gabryel (aruturu24) — passionate developer from São Paulo, Brazil. crazy about performance." />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
     <link href="style.css" rel="stylesheet" />
   </head>
   <body>
-    <nav class="ffxiv-nav" aria-label="Main navigation">
-      <a href="#about" class="nav-brand">桜 aruturu24</a>
-      <ul>
-        <li><a href="#about">About</a></li>
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand grad-text" href="#hero">aruturu24</a>
+      <input type="checkbox" id="nav-toggle" />
+      <label class="burger" for="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></label>
+      <ul class="nav-links">
         <li><a href="#job-class">Job Class</a></li>
         <li><a href="#quest-log">Quest Log</a></li>
         <li><a href="#achievements">Achievements</a></li>
@@ -24,191 +23,172 @@
     </nav>
 
     <main>
-      <!-- ============ HERO / ABOUT ============ -->
-      <section id="about" class="ffxiv-section ffxiv-hero">
-        <div class="crystal crystal-glow" aria-hidden="true"></div>
-        <div class="hero-particles" aria-hidden="true">
-          <span></span><span></span><span></span><span></span><span></span>
-          <span></span><span></span><span></span><span></span><span></span>
+      <!-- ============ HERO ============ -->
+      <header id="hero" class="hero">
+        <div class="shapes" aria-hidden="true">
+          <span class="shape s1"></span><span class="shape s2"></span><span class="shape s3"></span>
+          <span class="shape s4"></span><span class="shape s5"></span><span class="shape s6"></span>
         </div>
-        <p class="ascii">
-          ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣀⣤⣤⣤⣤⣄⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⠀⠀<br />⠀
-          ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣤⠶⣻⠝⠋⠠⠔⠛⠁⡀⠀⠈⢉⡙⠓⠶⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⠀⠀⠀<br />
-          ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠞⢋⣴⡮⠓⠋⠀⠀⢄⠀⠀⠉⠢⣄⠀⠈⠁⠀⡀⠙⢶⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⠀⠀⠀⠀<br />
-          ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠞⢁⣔⠟⠁⠀⠀⠀⠀⠀⠈⡆⠀⠀⠀⠈⢦⡀⠀⠀⠘⢯⢢⠙⢦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⠀⠀⠀⠀<br />⠀
-          ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡼⠃⠀⣿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠸⠀⠀⠀⠀⠀⢳⣦⡀⠀⠀⢯⠀⠈⣷⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-          <br />
-          ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⠆⡄⢠⢧⠀⣸⠀⠀⠀⠀⠀⠀⠀⢰⠀⣄⠀⠀⠀⠀⢳⡈⢶⡦⣿⣷⣿⢉⣷⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⠀<br />
-          ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣿⣯⣿⣁⡟⠈⠣⡇⠀⠀⢸⠀⠀⠀⠀⢸⡄⠘⡄⠀⠀⠀⠈⢿⢾⣿⣾⢾⠙⠻⣾⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⠀⠀<br />
-          ⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣿⡿⣮⠇⢙⠷⢄⣸⡗⡆⠀⢘⠀⠀⠀⠀⢸⠧⠀⢣⠀⠀⠀⡀⡸⣿⣿⠘⡎⢆⠈⢳⣽⣆⠀⠀⠀⠀⠀⠀⠀ ⠀⠀⠀<br />
-          ⠀⠀⠀⠀⠀⠀⠀⠀⢠⡟⢻⢷⣄⠀⠀⠀⠀⠀⠀⣾⣳⡿⡸⢀⣿⠀⠀⢸⠙⠁⠀⠼⠀⠀⠀⠀⢸⣇⠠⡼⡤⠴⢋⣽⣱⢿⣧⠀⢳⠈⢧⠀⢻⣿⣧⡀⠀⠀⠀⠀ ⠀⠀⠀⠀<br />
-          ⠀⠀⠀⠀⠀⠀⠀⢀⡿⣠⡣⠃⣿⠃⠀⠀⠀⠀⣸⣳⣿⠇⣇⢸⣿⢸⣠⠼⠀⠀⠀⡇⠀⡀⠉⠒⣾⢾⣆⢟⣳⡶⠓⠶⠿⢼⣿⣇⠈⡇⠘⢆⠈⢿⡘⣷⠀⠀⠀ ⠀⠀⠀⠀⠀<br />⠀
-          ⠀⠀⠀⠀⠀⠀⠀⠈⢷⣍⣤⡶⣿⡄⠀⠀⠀⢠⣿⠃⣿⠀⡏⢸⣿⣿⠀⢸⠀⠀⢠⡗⢀⠇⠀⢠⡟⠀⠻⣾⣿⠀⠀⠀⠀⡏⣿⣿⡀⢹⡀⠈⢦⠈⢷⣿⡆⠀⠀⠀⠀⠀⠀ ⠀<br />⠀
-          ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢁⣤⣄⠁⠀⠀⠀⣼⡏⢰⣟⠀⣇⠘⣿⣿⣾⣾⣆⢀⣾⠃⣼⢠⣶⣿⣭⣷⣶⣾⣿⣤⠀⠀⠀⡇⡯⣍⣧⠀⣷⠄⠈⢳⡀⢻⡁⠀⠀⠀⠀⠀⠀ ⠀<br />⠀
-          ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠺⣿⡿⠀⠀⠀⠀⡿⢀⣾⣧⠀⡗⡄⢿⣿⡙⣽⣿⣟⠛⠚⠛⠙⠉⢹⣿⣿⣦⠀⢸⡿⠀⠀⠀⢰⡯⣌⢻⡀⢸⢠⢰⡄⠹⡷⣿⣦⣤⠤⣶⡇⠀ ⠀<br />⠀
-          ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠀⠀⠀⣇⣾⣿⢸⢠⣧⢧⠘⣿⡇⠸⣿⢿⡆⠀⠀⠀⠀⠘⣯⠇⣿⠂⣸⢰⠀⠀⢀⣸⡧⣊⣼⡇⢸⣼⣸⣷⢣⢻⣄⠉⠙⠛⠉⠀ ⠀⠀<br />⠀
-          ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣳⣤⣴⣿⣏⣿⣾⢸⣿⡘⣧⣘⢿⣀⡙⣞⠁⠀⠀⠀⠀⢀⡬⢀⣉⢠⣧⡏⠀⠀⡎⣿⣿⣿⣿⠃⣸⡏⣿⣿⡎⢿⡘⡆⠀⠀⠀⠀⠀ ⠀<br />⠀
-          ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠉⣠⣼⣿⣿⣿⣼⣿⣧⢿⣿⣿⣯⡻⠟⠀⠀⠀⠀⠀⠐⢯⠣⡽⢟⣽⠀⠀⢘⡇⣿⣿⣿⡟⣴⣿⣷⣿⣿⣧⣿⣷⡽⠀⠀⠀⠀⠀⠀
-          <br />⠀
-          ⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣼⣹⣿⣇⣸⣿⣿⣿⣻⣚⣿⡿⣿⣿⣦⣤⣀⡉⠃⠀⢀⣀⣤⡶⠛⡏⠀⢀⣼⢸⣿⣿⣿⣿⣿⣿⣿⢋⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀
-          <br />⠀
-          ⣿⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠒⠒⠒⢭⢻⣽⣿⣿⣿⣿⣿⣿⢿⠿⣿⡏⠀⡼⠁⣀⣾⣿⣿⣿⣿⡿⣿⣿⣟⡻⣿⣿⡿⠣⠟⠀⠀⠀⠀⠀⠀
-          <br />⠀
-          ⠸⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢧⢿⣯⡽⠿⠛⠋⣵⢟⣋⣿⣶⣞⣤⣾⣿⣿⡟⢉⡿⢋⠻⢯⡉⢻⡟⢿⡅⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-          <br />⠀
-          ⠀⢻⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⡞⣿⣆⡀⠀⡼⡏⠉⠚⠭⢉⣠⠬⠛⠛⢁⡴⣫⠖⠁⠀⠀⣩⠟⠁⣸⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-          <br />⠀
-          ⠀⠈⢷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⣽⣿⣿⣾⠳⡙⣦⡤⠜⠊⠁⠀⣀⡴⠯⠾⠗⠒⠒⠛⠛⠛⠛⠛⠓⠿⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀
-          <br />⠀
-          ⠀⠀⠘⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠰⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢷⣻⣿⣿⠔⢪⠓⠬⢍⠉⣩⣽⢻⣤⣶⣦⠀⠀⠀⢀⣀⣤⣴⣾⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀
-          <br />⠀
-          ⠀⠀⠀⠹⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⣾⡏⢦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣯⣿⣿⠀⠀⣇⠀⣠⠎⠁⢹⡎⡟⡏⣷⣶⠿⠛⡟⠛⠛⣫⠟⠉⢿⣿⡿⠀⠀⠀⠀⠀⠀⠀⠀
-          <br />⠀
-          ⠀⠀⠀⠀⢻⡄⠀⠀⠀⠀⠀⠀⠀⠀⠹⣿⣷⠈⢷⡤⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⣾⣷⡀⣀⣀⣷⡅⠀⠀⠈⣷⢳⡇⣿⠀⠀⣸⠁⢠⡾⣟⣛⣻⣟⡿⣇⠀⠀⠀⠀⠀⠀⠀⠀
-          <br />⠀
-          ⠀⠀⠀⠀⠀⢷⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢯⢻⣏⡵⠿⠿⢤⣄⠀⢀⣿⢸⣹⣿⣀⣴⣿⣴⣿⣛⠋⠉⠉⡉⠛⣿⣧⡀⠀⠀⠀⠀⠀⠀
-          <br />⠀
-          ⠀⠀⠀⠀⠀⠘⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⡎⣿⣥⣶⠖⢉⣿⡿⣿⣿⡿⣿⣟⠿⠿⣿⣿⣿⡯⠻⣿⣿⣿⣷⡽⣿⡗⠀⠀⠀⠀⠀⠀
-          <br />⠀
-          ⠀⠀⠀⠀⠀⠀⠸⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⡘⣿⣩⠶⣛⣋⡽⠿⣷⢬⣙⣻⣿⣿⣿⣯⣛⠳⣤⣬⡻⣿⣿⣿⣿⣧⠀⠀⠀⠀⠀⠀
-          <br />
-          ⠀⣿⣛⣻⣿⡿⠿⠟⠗⠶⠶⠶⠶⠤⠤⢤⠤⡤⢤⣤⣤⣤⣤⣄⣀⣀⣀⣀⣀⣀⣀⣀⣣⢹⣷⣶⣿⣿⣦⣴⣟⣛⣯⣤⣿⣿⣿⣿⣿⣷⣌⣿⣿⣿⣿⣿⣿⣿⣤⣤⣤⣤⣤⣤⣄
-          <br />
-          ⠀⠉⠙⠛⠛⠛⠛⠛⠻⠿⠿⠿⠷⠶⠶⢶⣶⣶⣶⣶⣤⣤⣤⣤⣤⣥⣬⣭⣭⣉⣩⣍⣙⣏⣉⣏⣽⣶⣶⣶⣤⣤⣬⣤⣤⣾⣿⠶⠾⠿⠿⠿⠿⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠃
-          <br />
-          ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠉⠉⠉⠉⠉⠛⠛⠛⠛⠛⠛⠋⠉⠉⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-          <br />
-        </p>
-        <div class="hero-text">
-          <h1><span>桜</span> aruturu24</h1>
-          <p class="gold-text">passionate developer. crazy about performance.</p>
+        <p class="hero-kicker">São Paulo, Brazil</p>
+        <h1 class="hero-name grad-text">Arthur Gabryel</h1>
+        <p class="hero-handle">@aruturu24 — Black Mage main</p>
+        <p class="hero-tag">passionate developer. <em>crazy about performance.</em></p>
+        <div class="hero-cta">
+          <a class="btn" href="#achievements">View Achievements</a>
+          <a class="btn ghost" href="#battle-arena">Enter Battle Arena</a>
         </div>
-      </section>
+      </header>
 
       <!-- ============ JOB CLASS / SKILLS ============ -->
-      <section id="job-class" class="ffxiv-section ffxiv-skills">
-        <h2 class="section-title">Job Class</h2>
-        <p class="section-sub">Black Mage — wielder of aetherial code &amp; disciplined logic</p>
-        <div class="skill-grid">
-          <div class="skill-icon">
-            <svg viewBox="0 0 40 40"><polygon points="20,4 34,32 6,32" /><text x="20" y="27">L</text></svg>
-            <span>Laravel</span>
-          </div>
-          <div class="skill-icon">
-            <svg viewBox="0 0 40 40"><rect x="8" y="8" width="24" height="24" rx="3" /><text x="20" y="25">JS</text></svg>
-            <span>JavaScript</span>
-          </div>
-          <div class="skill-icon">
-            <svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="14" /><text x="20" y="25">RN</text></svg>
-            <span>React Native</span>
-          </div>
-          <div class="skill-icon">
-            <svg viewBox="0 0 40 40"><polygon points="20,4 36,20 20,36 4,20" /><text x="20" y="25">JV</text></svg>
-            <span>Java</span>
-          </div>
-          <div class="skill-icon">
-            <svg viewBox="0 0 40 40"><polygon points="20,5 35,35 5,35" /><text x="20" y="28">P</text></svg>
-            <span>PHP</span>
-          </div>
-          <div class="skill-icon">
-            <svg viewBox="0 0 40 40"><rect x="6" y="10" width="28" height="20" rx="10" /><text x="20" y="25">SQL</text></svg>
-            <span>SQL</span>
-          </div>
-          <div class="skill-icon">
-            <svg viewBox="0 0 40 40"><path d="M10 28 L10 14 L20 24 L30 14 L30 28" /><text x="20" y="38">G</text></svg>
-            <span>Git</span>
-          </div>
-          <div class="skill-icon">
-            <svg viewBox="0 0 40 40"><rect x="9" y="9" width="22" height="22" /><text x="20" y="25">&lt;/&gt;</text></svg>
-            <span>HTML/CSS</span>
+      <section id="job-class" class="section">
+        <div data-reveal>
+          <h2 class="section-title">Job Class</h2>
+          <p class="section-sub">Black Mage — wielder of aetherial code &amp; disciplined logic</p>
+          <div class="chip-grid">
+            <span class="chip">Laravel</span>
+            <span class="chip">JavaScript</span>
+            <span class="chip">TypeScript</span>
+            <span class="chip">React Native</span>
+            <span class="chip">Java</span>
+            <span class="chip">PHP</span>
+            <span class="chip">Python</span>
+            <span class="chip">Rust</span>
+            <span class="chip">SQL</span>
+            <span class="chip">Git</span>
+            <span class="chip">HTML/CSS</span>
+            <span class="chip">Expo</span>
+            <span class="chip">Flask</span>
           </div>
         </div>
       </section>
 
       <!-- ============ QUEST LOG / WORK ============ -->
-      <section id="quest-log" class="ffxiv-section ffxiv-quests">
-        <h2 class="section-title">Quest Log</h2>
-        <div class="quest-entry quest-complete">
-          <div class="quest-head">
-            <h3>BGF Consultoria em Engenharia LTDA.</h3>
-            <span class="quest-role">IT Intern</span>
-          </div>
-          <p class="quest-date">(jun '23 — jun '25)</p>
-          <ul class="quest-objectives">
-            <li>Developed a web application displaying end-user inspection results, built with the Laravel framework.</li>
-            <li>Integrated third-party libraries: jQuery, DataTable, and Bootstrap for a polished UI.</li>
-            <li>Built an Android mobile app (Java / Android Studio) to create inspection reports on-site.</li>
-            <li>Synced mobile reports to the desktop application for seamless review workflows.</li>
-          </ul>
-          <span class="quest-status">✓ Completed</span>
+      <section id="quest-log" class="section">
+        <div data-reveal>
+          <h2 class="section-title">Quest Log</h2>
+          <p class="section-sub">Completed quests — real-world experience</p>
+          <article class="panel quest">
+            <div class="quest-head">
+              <h3>BGF Consultoria em Engenharia LTDA</h3>
+              <span class="quest-role">IT Intern</span>
+            </div>
+            <p class="quest-date">Jun 2023 — Jun 2025</p>
+            <ul class="quest-objectives">
+              <li>Developed a web application for inspection results with Laravel, jQuery, DataTable and Bootstrap.</li>
+              <li>Built an Android mobile app for on-site inspection reports with Java and Android Studio.</li>
+            </ul>
+            <span class="quest-status">Quest Complete</span>
+          </article>
         </div>
       </section>
 
       <!-- ============ ACHIEVEMENTS / PROJECTS ============ -->
-      <section id="achievements" class="ffxiv-section ffxiv-achievements">
-        <h2 class="section-title">Achievements</h2>
-        <div class="achievement-card">
-          <svg class="achievement-icon" viewBox="0 0 48 48"><circle cx="24" cy="24" r="18" /><polygon points="24,8 40,24 24,40 8,24" /></svg>
-          <div class="achievement-body">
-            <h3>burst</h3>
-            <p class="achievement-desc">Habit tracker that notifies you when you miss a day. Stay consistent, adventurer.</p>
-            <p class="achievement-tech">Tech: React Native · Expo</p>
+      <section id="achievements" class="section">
+        <div data-reveal>
+          <h2 class="section-title">Achievements</h2>
+          <p class="section-sub">Trophies forged in code — github.com/aruturu24</p>
+          <div class="card-grid">
+            <a class="panel card" href="https://github.com/aruturu24/burst" target="_blank" rel="noopener">
+              <h3>burst</h3>
+              <p>Habit tracker app. Track habits and get notified when you miss a day.</p>
+              <p class="tags">TypeScript · React Native · Expo</p>
+            </a>
+            <a class="panel card" href="https://github.com/aruturu24/shito" target="_blank" rel="noopener">
+              <h3>shito</h3>
+              <p>Create and manage D&amp;D 5e character sheets from the terminal.</p>
+              <p class="tags">Rust</p>
+            </a>
+            <a class="panel card" href="https://github.com/aruturu24/tamashii" target="_blank" rel="noopener">
+              <h3>tamashii</h3>
+              <p>Website to manage Call of Cthulhu 7th Edition character sheets.</p>
+              <p class="tags">HTML · Web</p>
+            </a>
+            <a class="panel card" href="https://github.com/aruturu24/news-translator" target="_blank" rel="noopener">
+              <h3>news-translator</h3>
+              <p>Flask backend that automatically translates news articles.</p>
+              <p class="tags">Python · Flask</p>
+            </a>
+            <a class="panel card" href="https://github.com/aruturu24/matrix" target="_blank" rel="noopener">
+              <h3>matrix</h3>
+              <p>Matrix rain effect recreation.</p>
+              <p class="tags">JavaScript</p>
+            </a>
+            <a class="panel card" href="https://github.com/aruturu24/calculator" target="_blank" rel="noopener">
+              <h3>calculator</h3>
+              <p>Simple calculator with a clean interface.</p>
+              <p class="tags">HTML · CSS · JavaScript</p>
+            </a>
+            <a class="panel card" href="https://github.com/aruturu24/website-runinlinux" target="_blank" rel="noopener">
+              <h3>website-runinlinux</h3>
+              <p>Check if a game runs on Linux.</p>
+              <p class="tags">CSS · Web</p>
+            </a>
           </div>
         </div>
       </section>
 
       <!-- ============ BATTLE ARENA ============ -->
-      <section id="battle-arena" class="ffxiv-section ffxiv-battle">
-        <h2 class="section-title">Battle Arena</h2>
-        <p class="section-sub">A foe approaches. Prove your mettle, Black Mage.</p>
-        <div class="battle-stage">
-          <div class="combatant" id="player-side">
-            <pre class="sprite" id="player-sprite">   ___
-  /   \
- |  ^  |
-  \___/
-   |||
-  /   \</pre>
-            <h3 class="combatant-name gold-text">Black Mage</h3>
-            <div class="stat-row"><span>HP</span><div class="hp-bar"><div class="hp-fill" id="player-hp"></div></div><span id="player-hp-text"></span></div>
-            <div class="stat-row"><span>MP</span><div class="mp-bar"><div class="mp-fill" id="player-mp"></div></div><span id="player-mp-text"></span></div>
-            <div class="stat-row"><span>LB</span><div class="limit-bar"><div class="limit-fill" id="player-limit"></div></div><span id="player-limit-text"></span></div>
+      <section id="battle-arena" class="section">
+        <div data-reveal>
+          <h2 class="section-title">Battle Arena</h2>
+          <p class="section-sub">A foe approaches. Prove your mettle, Black Mage.</p>
+          <div class="panel battle-stage">
+            <div class="combatant" id="player-side">
+              <div class="sprite" id="player-sprite">
+                <svg viewBox="0 0 100 100" aria-hidden="true">
+                  <defs>
+                    <linearGradient id="g-player" x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0" stop-color="#4fc3f7" /><stop offset="1" stop-color="#1a73e8" />
+                    </linearGradient>
+                  </defs>
+                  <polygon points="50,4 86,40 70,96 30,96 14,40" fill="url(#g-player)" stroke="#fff" stroke-width="2" />
+                  <polyline points="14,40 50,56 86,40" fill="none" stroke="rgba(255,255,255,.75)" stroke-width="1.5" />
+                  <line x1="50" y1="56" x2="50" y2="96" stroke="rgba(255,255,255,.75)" stroke-width="1.5" />
+                </svg>
+              </div>
+              <h3 class="combatant-name">Black Mage</h3>
+              <div class="stat-row"><span>HP</span><div class="bar"><div class="fill hp" id="player-hp"></div></div><span id="player-hp-text"></span></div>
+              <div class="stat-row"><span>MP</span><div class="bar"><div class="fill mp" id="player-mp"></div></div><span id="player-mp-text"></span></div>
+              <div class="stat-row"><span>LB</span><div class="bar"><div class="fill lb" id="player-limit"></div></div><span id="player-limit-text"></span></div>
+            </div>
+            <div class="combatant" id="enemy-side">
+              <div class="sprite" id="enemy-sprite"></div>
+              <h3 class="combatant-name" id="enemy-name"></h3>
+              <div class="stat-row"><span>HP</span><div class="bar"><div class="fill hp" id="enemy-hp"></div></div><span id="enemy-hp-text"></span></div>
+            </div>
           </div>
-          <div class="combatant" id="enemy-side">
-            <pre class="sprite" id="enemy-sprite"></pre>
-            <h3 class="combatant-name" id="enemy-name"></h3>
-            <div class="stat-row"><span>HP</span><div class="hp-bar"><div class="hp-fill" id="enemy-hp"></div></div><span id="enemy-hp-text"></span></div>
+
+          <div class="battle-menu" id="battle-menu">
+            <button data-action="fire">Fire</button>
+            <button data-action="blizzard">Blizzard</button>
+            <button data-action="thunder">Thunder</button>
+            <button data-action="cure">Cure</button>
+            <button data-action="limit" id="limit-btn" disabled>Limit Break</button>
           </div>
-        </div>
 
-        <div class="battle-menu" id="battle-menu">
-          <button data-action="fire">Fire</button>
-          <button data-action="blizzard">Blizzard</button>
-          <button data-action="thunder">Thunder</button>
-          <button data-action="cure">Cure</button>
-          <button data-action="limit" id="limit-btn" disabled>Limit Break</button>
+          <div class="battle-log" id="battle-log"></div>
+          <button class="btn new-game-btn" id="new-game" hidden>New Battle</button>
         </div>
-
-        <div class="battle-log" id="battle-log"></div>
-        <button class="new-game-btn" id="new-game" hidden>New Battle</button>
       </section>
 
       <!-- ============ CONTACT ============ -->
-      <section id="contact" class="ffxiv-section ffxiv-contact">
-        <h2 class="section-title">Contact</h2>
-        <p class="section-sub">Join my linkshell — open a communications channel.</p>
-        <ul class="linkshell">
-          <li><a href="https://github.com/aruturu24" target="_blank" rel="noopener">GitHub</a></li>
-          <li><a href="https://www.linkedin.com/in/aruturu24" target="_blank" rel="noopener">LinkedIn</a></li>
-          <li><a href="mailto:aruturu24@hotmail.com" target="_blank" rel="noopener">Email</a></li>
-          <li><a href="https://x.com/aruturu24" target="_blank" rel="noopener">Twitter</a></li>
-          <li><a href="https://www.instagram.com/aruturu24/" target="_blank" rel="noopener">Instagram</a></li>
-        </ul>
+      <section id="contact" class="section">
+        <div data-reveal>
+          <h2 class="section-title">Contact</h2>
+          <p class="section-sub">Join my linkshell — open a communications channel</p>
+          <ul class="linkshell">
+            <li><a class="btn ghost" href="https://github.com/aruturu24" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a class="btn ghost" href="https://www.linkedin.com/in/aruturu24" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a class="btn ghost" href="mailto:aruturu24@hotmail.com">Email</a></li>
+            <li><a class="btn ghost" href="https://x.com/aruturu24" target="_blank" rel="noopener">X / Twitter</a></li>
+            <li><a class="btn ghost" href="https://www.instagram.com/aruturu24/" target="_blank" rel="noopener">Instagram</a></li>
+          </ul>
+        </div>
       </section>
     </main>
 
-    <footer class="ffxiv-footer">
-      <p class="gold-text">© 2025 aruturu24</p>
+    <footer class="footer">
+      <p>© 2026 Arthur Gabryel — aruturu24</p>
     </footer>
 
     <script src="game.js"></script>

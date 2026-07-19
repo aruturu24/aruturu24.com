@@ -1,24 +1,44 @@
 (() => {
   "use strict";
 
+  /* ---------- Scroll reveal ---------- */
+  const io = new IntersectionObserver(
+    (entries) => entries.forEach((e) => e.isIntersecting && e.target.classList.add("on")),
+    { threshold: 0.12 }
+  );
+  document.querySelectorAll("[data-reveal]").forEach((n) => io.observe(n));
+
+  /* ---------- Mobile nav: close on link tap ---------- */
+  const toggle = document.getElementById("nav-toggle");
+  document.querySelectorAll(".nav-links a").forEach((a) =>
+    a.addEventListener("click", () => (toggle.checked = false))
+  );
+
+  /* ---------- Battle minigame ---------- */
   const PLAYER = { hp: 100, hpMax: 100, mp: 50, mpMax: 50, limit: 0, thunderCd: 0 };
 
+  // Crystal-monster sprites: geometric SVG gems (no ASCII art)
+  const gem = (c1, c2, shape) => {
+    const shapes = {
+      shard: '<polygon points="50,4 86,40 70,96 30,96 14,40" />',
+      spire: '<polygon points="50,2 78,30 66,98 34,98 22,30" />',
+      prism: '<polygon points="50,8 90,50 50,92 10,50" />',
+    };
+    return (
+      `<svg viewBox="0 0 100 100" aria-hidden="true">` +
+      `<defs><linearGradient id="g-${c2.slice(1)}" x1="0" y1="0" x2="1" y2="1">` +
+      `<stop offset="0" stop-color="${c1}"/><stop offset="1" stop-color="${c2}"/>` +
+      `</linearGradient></defs>` +
+      `<g fill="url(#g-${c2.slice(1)})" stroke="#fff" stroke-width="2">${shapes[shape]}</g>` +
+      `<polyline points="20,45 50,58 80,45" fill="none" stroke="rgba(255,255,255,.7)" stroke-width="1.5"/>` +
+      `</svg>`
+    );
+  };
+
   const ENEMIES = [
-    {
-      name: "Spriggan",
-      hp: 60, hpMax: 60, atkMin: 8, atkMax: 12, weakness: "fire",
-      sprite: "   .--.\n  ( ◣ ◢ )\n  /|  |\\\n  '|  |'\n  (    )",
-    },
-    {
-      name: "Goblin",
-      hp: 80, hpMax: 80, atkMin: 10, atkMax: 15, weakness: "ice",
-      sprite: "   ___\n  (o  o)\n  /|/\\|\\\n  ( ---- )\n   |  |",
-    },
-    {
-      name: "Adamantoise",
-      hp: 120, hpMax: 120, atkMin: 5, atkMax: 10, weakness: "blizzard",
-      sprite: "  _______\n (_______)\n  |o   o|\n  |  ^  |\n (_/___\\_)",
-    },
+    { name: "Aether Shard", hp: 60, hpMax: 60, atkMin: 8, atkMax: 12, sprite: gem("#4fc3f7", "#1a73e8", "shard") },
+    { name: "Void Spire", hp: 80, hpMax: 80, atkMin: 10, atkMax: 15, sprite: gem("#8fd8ff", "#0288d1", "spire") },
+    { name: "Crystal Golem", hp: 120, hpMax: 120, atkMin: 5, atkMax: 10, sprite: gem("#0288d1", "#0a0a0f", "prism") },
   ];
 
   const ACTIONS = {
@@ -71,17 +91,15 @@
     el("enemy-hp").style.width = (enemy.hp / enemy.hpMax) * 100 + "%";
     el("enemy-hp-text").textContent = `${enemy.hp}/${enemy.hpMax}`;
 
-    const limitBtn = el("limit-btn");
-    limitBtn.disabled = PLAYER.limit < 100;
-    const thunder = menu.querySelector('[data-action="thunder"]');
-    thunder.disabled = PLAYER.thunderCd > 0 || PLAYER.mp < ACTIONS.thunder.mp;
+    el("limit-btn").disabled = PLAYER.limit < 100;
+    menu.querySelector('[data-action="thunder"]').disabled =
+      PLAYER.thunderCd > 0 || PLAYER.mp < ACTIONS.thunder.mp;
   }
 
   function disableMenu(disabled) {
     menu.querySelectorAll("button").forEach((b) => {
       if (b.id === "limit-btn") return;
-      if (disabled) b.disabled = true;
-      else b.disabled = PLAYER.mp < (ACTIONS[b.dataset.action]?.mp || 0) || PLAYER.thunderCd > 0;
+      b.disabled = disabled || PLAYER.mp < (ACTIONS[b.dataset.action]?.mp || 0) || PLAYER.thunderCd > 0;
     });
     el("limit-btn").disabled = PLAYER.limit < 100;
   }
@@ -89,12 +107,12 @@
   function checkEnd() {
     if (enemy.hp <= 0) {
       logMsg(`${enemy.name} is defeated! Victory!`, "log-system");
-      endBattle(true);
+      endBattle();
       return true;
     }
     if (PLAYER.hp <= 0) {
       logMsg("You have fallen in battle...", "log-enemy");
-      endBattle(false);
+      endBattle();
       return true;
     }
     return false;
@@ -163,7 +181,7 @@
     }
 
     let dmg = rand(a.dmg[0], a.dmg[1]);
-    let crit = Math.random() < 0.15;
+    const crit = Math.random() < 0.15;
     if (crit) dmg = Math.round(dmg * 1.5);
     if (a.freeze && Math.random() < a.freeze) {
       frozen = true;
@@ -172,8 +190,7 @@
     enemy.hp = Math.max(0, enemy.hp - dmg);
     dmgNumber(el("enemy-side"), "-" + dmg, crit ? "crit" : "normal");
     shake(el("enemy-side"));
-    if (crit) logMsg("Critical! " + dmg + " damage!", "log-crit");
-    else logMsg(dmg + " damage!", "log-player");
+    logMsg(crit ? `Critical! ${dmg} damage!` : `${dmg} damage!`, crit ? "log-crit" : "log-player");
 
     if (action === "thunder") PLAYER.thunderCd = a.cd;
 
@@ -181,7 +198,7 @@
     if (!checkEnd()) setTimeout(enemyTurn, 700);
   }
 
-  function endBattle(won) {
+  function endBattle() {
     busy = true;
     disableMenu(true);
     newGameBtn.hidden = false;
@@ -197,7 +214,7 @@
     busy = false;
 
     el("enemy-name").textContent = enemy.name;
-    el("enemy-sprite").textContent = enemy.sprite;
+    el("enemy-sprite").innerHTML = enemy.sprite;
     log.innerHTML = "";
     logMsg(`A wild ${enemy.name} appears!`, "log-system");
     newGameBtn.hidden = true;
